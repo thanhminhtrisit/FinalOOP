@@ -392,7 +392,7 @@ public class CongTyManager {
 			}
 		}
 		if (highestPaid != null) {
-			System.out.println("Highest Paid NhanVienThuong: " + highestPaid.toString());
+			System.out.println("Highest Paid NhanVienThuong: " + highestPaid.getHoTen() + " , Luong: " + highestPaid.getLuong());
 		}
 	}
 
@@ -408,18 +408,20 @@ public class CongTyManager {
 			}
 		}
 		if (mostManaging != null) {
-			System.out.println("TruongPhong managing the most NhanVienThuong: " + mostManaging.toString());
+			System.out.println("TruongPhong managing the most NhanVienThuong: " + mostManaging.getHoTen() + ", manager " + mostManaging.getListNhanVien().size() + " employees");
 		}
 	}
 
 	public void sortEmployeesByName() {
-		listAllNhanVien.sort((nv1, nv2) -> nv1.getHoTen().compareToIgnoreCase(nv2.getHoTen()));
+		this.listAllNhanVien.sort((nv1, nv2) -> nv1.getHoTen().compareToIgnoreCase(nv2.getHoTen()));
 		System.out.println("Employees sorted by name alphabetically.");
+		this.displayAllEmployeesFormatted();
 	}
 
 	public void sortEmployeesBySalary() {
-		listAllNhanVien.sort((nv1, nv2) -> Double.compare(nv2.getLuong(), nv1.getLuong()));
+		this.listAllNhanVien.sort((nv1, nv2) -> Double.compare(nv2.getLuong(), nv1.getLuong()));
 		System.out.println("Employees sorted by salary in descending order.");
+		this.displayAllEmployeesFormatted();
 	}
 
 	public void findGiamDocWithMostCoPhan() {

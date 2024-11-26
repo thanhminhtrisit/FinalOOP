@@ -53,7 +53,6 @@ public class Main {
 			System.out.println("12. Exit");
 			System.out.print("Enter your choice: ");
 			choice = (int) UserInput.getIntegerInput();
-			System.err.println(congTyManager.getCongTy().getDoanhThuThang());
 
 			switch (choice) {
 			case 1:
@@ -81,11 +80,9 @@ public class Main {
 				break;
 			case 8:
 				congTyManager.sortEmployeesByName();
-				congTyManager.displayAllEmployeesFormatted();
 				break;
 			case 9:
 				congTyManager.sortEmployeesBySalary();
-				congTyManager.displayAllEmployeesFormatted();
 				break;
 			case 10:
 				congTyManager.findGiamDocWithMostCoPhan();

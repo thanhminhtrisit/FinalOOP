@@ -76,10 +76,10 @@ public class GiamDocManager {
 
 		// Input and validate coPhan
 		while (true) {
-			System.out.print("Enter coPhan (percentage, must be >= 0): ");
+			System.out.print("Enter coPhan (percentage, must be >= 0 and <=1): ");
 			try {
 				coPhan = Double.parseDouble(scanner.nextLine());
-				if (coPhan >= 0) {
+				if (coPhan >= 0 && coPhan <= 1) {
 					break;
 				}
 			} catch (NumberFormatException e) {
@@ -155,7 +155,7 @@ public class GiamDocManager {
 				if (!newCoPhanInput.isBlank()) {
 					try {
 						double newCoPhan = Double.parseDouble(newCoPhanInput);
-						if (newCoPhan >= 0) {
+						if (newCoPhan >= 0 && newCoPhan <= 1) {
 							currentGiamDoc.setCoPhan(newCoPhan);
 						} else {
 							System.out.println("Invalid coPhan. Keeping the current value.");
